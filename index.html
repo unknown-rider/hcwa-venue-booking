@@ -30,6 +30,11 @@
     header {
       background: var(--deep-blue);
       padding: 0 2rem;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,9 +69,12 @@
     /* ── HERO ── */
     .hero {
       background: var(--deep-blue);
-      position: relative;
-      overflow: hidden;
       padding: 4rem 2rem 3.5rem;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .hero h1 {
@@ -318,21 +326,25 @@
 
   <!-- HEADER -->
   <header>
-    <a class="header-logo" href="#">
-      <img src="logofull.png" alt="Hellenic Community of Western Australia Inc." />
-    </a>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#venues">Our Venues</a>
-      <a href="#book">Book Now</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <a class="header-logo" href="#">
+        <img src="logofull.png" alt="Hellenic Community of Western Australia Inc." />
+      </a>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#venues">Our Venues</a>
+        <a href="#book">Book Now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Venue Hire</h1>
-    <p class="hero-breadcrumb"><a href="#">Home</a> &rsaquo; Venue Hire</p>
+    <div class="hero-inner">
+      <h1>Venue Hire</h1>
+      <p class="hero-breadcrumb"><a href="#">Home</a> &rsaquo; Venue Hire</p>
+    </div>
   </section>
 
   <!-- FEATURES STRIP -->
