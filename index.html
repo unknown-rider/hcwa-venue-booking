@@ -9,7 +9,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --deep-blue:   #21225b;
+      --deep-blue:   #1e2260;
       --alt-blue:    #001773;
       --gold:        #d6b131;
       --blue:        #3254a5;
@@ -22,7 +22,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--white-bg);
+      background: var(--white);
       color: #222;
     }
 
@@ -34,50 +34,10 @@
       align-items: center;
       justify-content: space-between;
       height: 72px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
-    }
-
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      text-decoration: none;
-    }
-
-    .header-logo img {
-      height: 46px;
-      width: auto;
-    }
-
-    .header-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .header-logo-text span:first-child {
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      font-size: 0.8rem;
-      color: var(--white);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .header-logo-text span:last-child {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
     }
 
     nav a {
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
       font-size: 0.78rem;
       font-weight: 500;
@@ -89,90 +49,48 @@
 
     nav a:hover { color: var(--gold); }
 
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      height: 52px;
+      width: auto;
+    }
+
     /* ── HERO ── */
     .hero {
       background: var(--deep-blue);
       position: relative;
       overflow: hidden;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(ellipse at 20% 50%, rgba(50,84,165,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(214,177,49,0.12) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    /* decorative olive branch pattern */
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0; right: 0;
-      height: 60px;
-      background: var(--white-bg);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-
-    .hero-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      position: relative;
+      padding: 4rem 2rem 3.5rem;
     }
 
     .hero h1 {
       font-family: 'Merriweather', serif;
-      font-weight: 900;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
       color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
-      position: relative;
+      line-height: 1.25;
+      max-width: 600px;
     }
 
-    .hero h1 span {
-      color: var(--gold);
+    .hero-breadcrumb {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 1rem;
+      font-weight: 400;
     }
 
-    .hero p {
-      font-size: 1rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      max-width: 580px;
-      margin: 0 auto 2rem;
-      line-height: 1.7;
-      position: relative;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--deep-blue);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.85rem 2.5rem;
-      border-radius: 2px;
+    .hero-breadcrumb a {
+      color: rgba(255,255,255,0.5);
       text-decoration: none;
-      position: relative;
-      transition: background 0.2s, transform 0.15s;
     }
 
-    .hero-cta:hover {
-      background: #c4a028;
-      transform: translateY(-2px);
-    }
+    .hero-breadcrumb a:hover { color: var(--gold); }
 
     /* ── FEATURES STRIP ── */
     .features {
@@ -401,10 +319,7 @@
   <!-- HEADER -->
   <header>
     <a class="header-logo" href="#">
-      <div class="header-logo-text">
-        <span>Hellenic Community</span>
-        <span>of Western Australia Inc.</span>
-      </div>
+      <img src="logofull.png" alt="Hellenic Community of Western Australia Inc." />
     </a>
     <nav>
       <a href="#">Home</a>
@@ -416,28 +331,22 @@
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-eyebrow">Venue Hire — Perth, Western Australia</p>
-    <h1>Host Your Event at the<br><span>Heart of Our Community</span></h1>
-    <p>The Hellenic Community of Western Australia offers elegant, well-appointed function spaces for weddings, celebrations, corporate events, and community gatherings.</p>
-    <a href="#book" class="hero-cta">Check Availability &amp; Book</a>
+    <h1>Venue Hire</h1>
+    <p class="hero-breadcrumb"><a href="#">Home</a> &rsaquo; Venue Hire</p>
   </section>
 
   <!-- FEATURES STRIP -->
   <div class="features">
     <div class="feature-item">
-      <span class="feature-icon">📍</span>
       <span class="feature-text">Northbridge, Perth</span>
     </div>
     <div class="feature-item">
-      <span class="feature-icon">🏛️</span>
       <span class="feature-text">Community Hall</span>
     </div>
     <div class="feature-item">
-      <span class="feature-icon">📅</span>
       <span class="feature-text">Online Booking</span>
     </div>
     <div class="feature-item">
-      <span class="feature-icon">✉️</span>
       <span class="feature-text">Instant Confirmation</span>
     </div>
   </div>
@@ -455,8 +364,8 @@
           <h3>Hellenic Community Hall — Half Day (4 hrs)</h3>
           <p>A half-day hire of the Hellenic Community Hall, suited to weddings, cultural events, gala dinners, and large community gatherings. Steeped in history and Hellenic tradition.</p>
           <div class="space-card-meta">
-            <span>⏱ 4 hour hire</span>
-            <span>👥 Large capacity</span>
+            <span>4 hour hire</span>
+            <span>Large capacity</span>
           </div>
         </div>
       </div>
@@ -466,8 +375,8 @@
           <h3>Hellenic Community Hall — Short Hire (2 hrs)</h3>
           <p>A shorter hire of the Hellenic Community Hall, ideal for meetings, rehearsals, workshops, and private functions. Available in convenient 2-hour blocks.</p>
           <div class="space-card-meta">
-            <span>⏱ 2 hour hire</span>
-            <span>👥 Full hall access</span>
+            <span>2 hour hire</span>
+            <span>Full hall access</span>
           </div>
         </div>
       </div>
